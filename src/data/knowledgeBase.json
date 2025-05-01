@@ -1,0 +1,57 @@
+{
+  "faq":[
+    {
+      "question": "What is React?",
+      "answer": "React is a JavaScript library developed by Facebook for building user interfaces based on components."
+    },
+    {
+      "question": "What is JSX?",
+      "answer": "JSX stands for JavaScript XML. It allows you to write HTML structures in the same file as JavaScript code."
+    },
+    {
+      "question": "What is a component in React?",
+      "answer": "A component is an independent, reusable piece of UI in a React application."
+    },
+    {
+      "question": "What is useState in React?",
+      "answer": "useState is a Hook that lets you add and manage state inside functional components."
+    },
+    {
+      "question": "What is useEffect in React?",
+      "answer": "useEffect is a Hook that lets you perform side effects like data fetching, DOM manipulation, or timers in functional components."
+    },
+    {
+      "question": "What are props in React?",
+      "answer": "Props are inputs to components. They are passed as attributes and allow data to flow from parent to child components."
+    },
+    {
+      "question": "What is virtual DOM in React?",
+      "answer": "Virtual DOM is a lightweight copy of the real DOM. React uses it to optimize rendering by updating only what changes."
+    },
+    {
+      "question": "What is context API in React?",
+      "answer": "Context API is a way to pass data through the component tree without having to pass props manually at every level."
+    },
+    {
+      "question": "What is useContext Hook?",
+      "answer": "useContext is a Hook that lets you access the Context value directly inside a functional component."
+    },
+    {
+      "question": "What is the difference between controlled and uncontrolled components?",
+      "answer": "Controlled components are managed by React state, while uncontrolled components maintain their own internal state."
+    },
+    {
+      "question": "What is lazy loading in React?",
+      "answer": "Lazy loading means delaying the loading of components or resources until they are needed to improve performance."
+    },
+    {
+      "question": "What are keys in React lists?",
+      "answer": "Keys are unique identifiers used by React to keep track of items in a list and efficiently update or reorder them."
+    },
+    {
+      "question": "What is error boundary in React?",
+      "answer": "An error boundary is a React component that catches JavaScript errors anywhere in its child component tree and displays a fallback UI."
+    }
+  ]
+  
+}

@@ -1,0 +1,57 @@
+.container{
+    border:2px solid yellow;
+    width:70%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.input-box{
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 1rem;
+}
+
+.input-box textarea{
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    resize: none;
+    border-radius: 1rem;
+}
+
+.input-box button{
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
+
+.chat-window{
+    height: 85%;
+    border:2px solid blue;
+    overflow: auto;
+    padding-bottom: 10%;
+}
+
+.user-question {
+    background-color: #d1e8ff;
+    color: #003366;
+    text-align: right;
+    align-self: flex-end;
+    border: 1px solid #b0d4f1;
+    font-size: 2rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
+
+.bot-response {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: left;
+    align-self: flex-start;
+    border: 1px solid #ddd;
+    white-space: pre-wrap; /* For code formatting */
+    padding: 0.5rem;
+}
