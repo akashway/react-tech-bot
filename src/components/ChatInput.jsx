@@ -1,24 +1,34 @@
-import React from "react";
-
-
 function ChatInput(props = {}) {
-    const { value = "", onChange = () => { }, onClick = () => { } } = props
+  const {
+    input = "",
+    inputChangeHandler = () => {},
+    inputSubmitHandler = () => {},
+  } = props
 
-    function changaHandler(event) {
-        onChange(event.target.value)
-    }
+  function changeHandler(e) {
+    inputChangeHandler(e.target.value)
+  }
 
-    function clickHandler(event) {
-        event.preventDefault()
-        onClick()
-    }
+  function submitHandler(e) {
+    e.preventDefault()
+    inputSubmitHandler()
+  }
 
-    return (
-        <form className="input-box">
-            <textarea type="text" placeholder="Type Your Question Here..." value={value} onChange={changaHandler}></textarea>
-            <button type="submit" onClick={clickHandler} disabled={value?false:true}>Submit</button>
+  return (
+    <div className="input-container">
+      <div className="textarea-wrapper">
+        <form onSubmit={submitHandler}>
+          <textarea
+            name="input"
+            id="input"
+            value={input}
+            onChange={changeHandler}
+          ></textarea>
+          <button type="submit" className="submit-button">Send</button>
         </form>
-    )
+      </div>
+    </div>
+  )
 }
 
 export default ChatInput

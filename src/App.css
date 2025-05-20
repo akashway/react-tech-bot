@@ -1,57 +1,228 @@
-.container{
-    border:2px solid yellow;
-    width:70%;
-    height: 100%;
-    margin: auto;
-    position: relative;
+/* Base styles */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #343541;
+  color: #ececf1;
+  overflow: hidden; /* Prevent scrollbar flashes */
+  display: flex;
+  justify-content: center;
 }
 
-.input-box{
-    width: 100%;
-    height: 15%;
-    position: absolute;
-    bottom: 1rem;
+/* Main container: 70% width centered */
+.container {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.input-box textarea{
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem;
-    resize: none;
-    border-radius: 1rem;
+/* Chat area */
+.chat-container {
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  padding: 1rem;
+  background-color: #343541;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  min-height: 0; /* Prevent overflow bugs */
+  box-sizing: border-box;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
-.input-box button{
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
+.chat-container > * {
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
-.chat-window{
-    height: 85%;
-    border:2px solid blue;
-    overflow: auto;
-    padding-bottom: 10%;
+/* For code blocks or inline code */
+/* .chat-container pre,
+.chat-container code {
+  max-width: 100%;
+  overflow-x: auto;
+} */
+
+/* Placeholder text */
+.placeholder {
+  background-color: transparent;
+  color: #888;
+  width: 100%;
+  text-align: center;
 }
 
-.user-question {
-    background-color: #d1e8ff;
-    color: #003366;
-    text-align: right;
-    align-self: flex-end;
-    border: 1px solid #b0d4f1;
-    font-size: 2rem;
-    margin: 1rem 0;
-    padding: 0.5rem;
+/* ReactMarkdown or response text */
+.chat-container p {
+  background-color: #444654;
+  padding: 0.5rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+/* Input container fixed at bottom */
+.input-container {
+  position: sticky;
+  bottom: 0;
+  background-color: #40414f;
+  padding: 1rem;
+  border-top: 1px solid #555;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Wrap textarea & button for positioning */
+.textarea-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Textarea styles */
+.textarea-wrapper textarea {
+  width: 100%;
+  resize: none;
+  padding: 0.75rem 4.5rem 0.75rem 0.75rem; /* right padding for button */
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  background-color: #555;
+  color: white;
+  min-height: 50px;
+  box-sizing: border-box;
+}
+
+/* Button positioned inside textarea */
+.submit-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem 1rem;
+  background-color: #10a37f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  height: calc(
+    50px - 1rem
+  ); /* roughly matching textarea height minus padding */
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.submit-button:hover {
+  background-color: #0f9770;
+}
+
+.chat-user,
+.chat-bot {
+  width: 100%;
+  padding: 1rem 2rem; /* horizontal padding */
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 12px;
+}
+.chat-user {
+  background-color: #0f7ad1;
+  color: white;
+  text-align: right; /* Align text inside user box to the right */
+  border-radius: 12px 12px 12px 0;
+}
+.chat-bot {
+  background-color: #444654;
+  color: #ececf1;
+  text-align: left;
+  border-radius: 12px 12px 0 12px;
+}
+
+.chat-bot ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.chat-bot ol {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.chat-bot pre {
+  margin: 0;
 }
 
 
-.bot-response {
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: left;
-    align-self: flex-start;
-    border: 1px solid #ddd;
-    white-space: pre-wrap; /* For code formatting */
-    padding: 0.5rem;
+
+/* Login Form */
+
+.login-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  background-color: #444654;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 400px;
+  color: #f0f0f0;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #e3e3e3;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #5a5d6a;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #3c3f50;
+  color: #ffffff;
+}
+
+.form-group input::placeholder {
+  color: #b3b3b3;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #10a37f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #0e8f6e;
 }
